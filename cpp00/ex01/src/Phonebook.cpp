@@ -23,23 +23,23 @@ void		Phonebook::add() {
 	}
 
 	std::cout << FG_MAGENTA"Enter first name: "RESET;
-	std::cin >> input;
+	getline(std::cin, input);
 	_contacts[index].set_first_name(input);
 
 	std::cout << FG_MAGENTA"Enter last name: "RESET;
-	std::cin >> input;
+	getline(std::cin, input);
 	_contacts[index].set_last_name(input);
 
 	std::cout << FG_MAGENTA"Enter nickname: "RESET;
-	std::cin >> input;
+	getline(std::cin, input);
 	_contacts[index].set_nick_name(input);
 
 	std::cout << FG_MAGENTA"Enter phone number: "RESET;
-	std::cin >> input;
+	getline(std::cin, input);
 	_contacts[index].set_phone_number(input);
 
 	std::cout << FG_MAGENTA"Enter darkest secret: "RESET;
-	std::cin >> input;
+	getline(std::cin, input);
 	_contacts[index].set_darkest_secret(input);
 
 }

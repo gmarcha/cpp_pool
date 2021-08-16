@@ -12,7 +12,7 @@ int	main(void) {
 	std::string		input_index;
 
 	std::cout << FG_CYAN"Enter input: "RESET;
-	std::cin >> input;
+	getline(std::cin, input);
 	while (input != "EXIT") {
 		if (input == "ADD") {
 			phonebook.add();
@@ -20,14 +20,14 @@ int	main(void) {
 			phonebook.print();
 			if (phonebook.get_nb_contacts() != 0) {
 				std::cout << FG_YELLOW"Enter index: "RESET;
-				std::cin >> input_index;
+				getline(std::cin, input_index);
 				if (input_index.size() == 1 && is_contact(phonebook, input_index) == true) {
 					phonebook.search(input_index[0] - 48);
 				}
 			}
 		}
 		std::cout << FG_CYAN"Enter input: "RESET;
-		std::cin >> input;
+		getline(std::cin, input);
 	}
 	return (0);
 }
