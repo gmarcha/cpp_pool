@@ -11,7 +11,7 @@ int	main(void) {
 	std::string		input;
 	std::string		input_index;
 
-	std::cout << "Enter input: ";
+	std::cout << FG_CYAN"Enter input: "RESET;
 	std::cin >> input;
 	while (input != "EXIT") {
 		if (input == "ADD") {
@@ -26,7 +26,7 @@ int	main(void) {
 				}
 			}
 		}
-		std::cout << "Enter input: ";
+		std::cout << FG_CYAN"Enter input: "RESET;
 		std::cin >> input;
 	}
 	return (0);

@@ -22,23 +22,23 @@ void		Phonebook::add() {
 		_nb_contacts++;
 	}
 
-	std::cout << FG_CYAN"Enter first name: "RESET;
+	std::cout << FG_MAGENTA"Enter first name: "RESET;
 	std::cin >> input;
 	_contacts[index].set_first_name(input);
 
-	std::cout << FG_CYAN"Enter last name: "RESET;
+	std::cout << FG_MAGENTA"Enter last name: "RESET;
 	std::cin >> input;
 	_contacts[index].set_last_name(input);
 
-	std::cout << FG_CYAN"Enter nickname: "RESET;
+	std::cout << FG_MAGENTA"Enter nickname: "RESET;
 	std::cin >> input;
 	_contacts[index].set_nick_name(input);
 
-	std::cout << FG_CYAN"Enter phone number: "RESET;
+	std::cout << FG_MAGENTA"Enter phone number: "RESET;
 	std::cin >> input;
 	_contacts[index].set_phone_number(input);
 
-	std::cout << FG_CYAN"Enter darkest secret: "RESET;
+	std::cout << FG_MAGENTA"Enter darkest secret: "RESET;
 	std::cin >> input;
 	_contacts[index].set_darkest_secret(input);
 
@@ -63,6 +63,12 @@ void		Phonebook::search_infos(const Contact &contact) const {
 void		Phonebook::print() const {
 	size_t			index = 1;
 
+	if (_nb_contacts != 0) {
+		std::cout << FG_YELLOW"     index"RESET;
+		std::cout << "|" << FG_MAGENTA"first name"RESET;
+		std::cout << "|" << FG_MAGENTA" last name"RESET;
+		std::cout << "|" << FG_MAGENTA"  nickname"RESET << std::endl;
+	}
 	for (size_t i = _start_contact % 8; i < _nb_contacts; i++) {
 		std::cout << "         " << index;
 		print_contacts(_contacts[i].get_first_name());
