@@ -1,5 +1,8 @@
-#include <iostream>
-#include <string>
+#ifndef KAREN_HPP
+# define KAREN_HPP
+
+# include <iostream>
+# include <string>
 
 class Karen {
 
@@ -24,3 +27,5 @@ typedef struct s_complain
 	std::string		complain;
 	void			(Karen::*level) (void) const;
 }					t_complain;
+
+#endif // KAREN_HPP
