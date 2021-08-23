@@ -1,0 +1,11 @@
+What's the difference between the heap and the stack ?
+
+Originally, heaps and stacks are abstract data types :
+these are rules and constraints which describes a data type,
+in opposite to an implementation which define it.
+
+When they are precede with the article "the", the stack describes the call stack,
+a place where are store all function calls and local variables of a C-like
+programming language program. In these circumstances, the "heap" is a reference
+to dynamic allocation, because the implementation of malloc in standard lib is
+heap oriented, meaning that memory is organized in a heap.
