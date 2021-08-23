@@ -18,3 +18,9 @@ class Karen {
 		void		error(void) const;
 
 };
+
+typedef struct s_complain
+{
+	std::string		complain;
+	void			(Karen::*level) (void) const;
+}					t_complain;

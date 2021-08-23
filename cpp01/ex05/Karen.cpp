@@ -1,11 +1,5 @@
 #include "Karen.hpp"
 
-typedef struct s_complain
-{
-	std::string		complain;
-	void			(Karen::*level) (void) const;
-}					t_complain;
-
 Karen::Karen() {}
 
 Karen::~Karen() {}
