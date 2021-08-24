@@ -19,7 +19,7 @@ class Fixed {
 	private:
 
 		int					_rawBits;
-		static const int	_nbFractionalBits = 8;
+		static const int	_nbFractionalBits;
 
 };
 

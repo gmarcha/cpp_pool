@@ -32,3 +32,5 @@ void				Fixed::setRawBits(const int raw) {
 
 	this->_rawBits = raw;
 }
+
+const int			Fixed::_nbFractionalBits = 8;
