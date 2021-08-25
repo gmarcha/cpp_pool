@@ -4,6 +4,7 @@ int	main(void) {
 
 	Fixed 		x;
 	Fixed		y(42);
+
 	const Fixed add(Fixed(10) + Fixed(12) + Fixed(20));
 	const Fixed sub(Fixed(142) - Fixed(42) - Fixed(58.0f));
 	const Fixed mul(Fixed(42) * Fixed(0.25f) * Fixed(2));
@@ -41,5 +42,5 @@ int	main(void) {
 	std::cout << "max(x,y):     " << Fixed::max(x,y) << std::endl;
 	std::cout << "min(x,y):     " << Fixed::min(x,y) << std::endl;
 
-	return 0;
+	return (0);
 }

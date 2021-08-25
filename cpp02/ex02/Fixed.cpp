@@ -4,7 +4,7 @@ Fixed::Fixed(void) : _rawBits(0) {}
 
 Fixed::Fixed(const int nb) : _rawBits(nb << _nbFractionalBits) {}
 
-Fixed::Fixed(const float nb) : _rawBits(roundf(nb * (1 << _nbFractionalBits))) {}
+Fixed::Fixed(const float nb) : _rawBits(static_cast<int>(roundf(nb * (1 << _nbFractionalBits)))) {}
 
 Fixed::Fixed(const Fixed &src) : _rawBits(src._rawBits) {}
 
@@ -116,7 +116,6 @@ Fixed&				Fixed::max(Fixed &a, Fixed &b) {
 
 const Fixed&		Fixed::min(const Fixed &a, const Fixed &b) {
 
-	// std::cout << "const argument" << std::endl;
 	if (a < b)
 		return (a);
 	return (b);
@@ -124,7 +123,6 @@ const Fixed&		Fixed::min(const Fixed &a, const Fixed &b) {
 
 const Fixed&		Fixed::max(const Fixed &a, const Fixed &b) {
 
-	// std::cout << "const argument" << std::endl;
 	if (a < b)
 		return (b);
 	return (a);
