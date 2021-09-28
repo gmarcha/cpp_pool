@@ -1,4 +1,4 @@
-NAME		=	moar_brainz
+NAME		=	ex01.out
 CC			=	clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic -pedantic-errors
 OBJ			=	$(SRC:.cpp=.o)

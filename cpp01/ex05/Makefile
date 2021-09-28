@@ -1,4 +1,4 @@
-NAME		=	karen_2
+NAME		=	ex05.out
 CC			=	clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic -pedantic-errors
 HEAD		=	Karen.hpp

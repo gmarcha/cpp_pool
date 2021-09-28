@@ -1,4 +1,4 @@
-NAME		=	hi_this_is_brain
+NAME		=	ex02.out
 CC			=	clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic -pedantic-errors
 OBJ			=	$(SRC:.cpp=.o)

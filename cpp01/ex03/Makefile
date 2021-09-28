@@ -1,4 +1,4 @@
-NAME		=	unnecessary_violence
+NAME		=	ex03.out
 CC			=	clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic -pedantic-errors
 HEAD		=	Weapon.hpp \

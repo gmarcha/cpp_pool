@@ -1,4 +1,4 @@
-NAME		=	sed_is_for_losers
+NAME		=	ex04.out
 CC			=	clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic -pedantic-errors
 OBJ			=	$(SRC:.cpp=.o)
