@@ -14,11 +14,11 @@ class ClapTrap {
 
 		ClapTrap&		operator=(const ClapTrap &rhs);
 
-		void			attack(const std::string &target);
+		virtual void	attack(const std::string &target);
 		void			takeDamage(const unsigned int amount);
 		void			beRepaired(const unsigned int amount);
 
-	private:
+	protected:
 
 		ClapTrap(void);
 
