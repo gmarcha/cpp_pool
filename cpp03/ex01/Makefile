@@ -1,10 +1,12 @@
 NAME		=	ex01.out
 CC			=	clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic -pedantic-errors
-HEAD		=	ClapTrap.hpp
+HEAD		=	ClapTrap.hpp \
+				ScavTrap.hpp
 OBJ			=	$(SRC:.cpp=.o)
 SRC			=	main.cpp \
-				ClapTrap.cpp
+				ClapTrap.cpp \
+				ScavTrap.cpp
 
 all:			$(NAME)
 
