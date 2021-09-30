@@ -9,7 +9,7 @@ SRC			=	main.cpp \
 all:			$(NAME)
 
 $(NAME):		$(OBJ)
-				$(CC) $(CFLAGS) -fsanitize=address -o $@ $^ -lm
+				$(CC) $(CFLAGS) -fsanitize=address -o $@ $^
 
 %.o:			%.cpp $(HEAD)
 				$(CC) $(CFLAGS) -o $@ -c $<
