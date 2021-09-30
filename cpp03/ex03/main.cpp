@@ -2,51 +2,51 @@
 
 int main(void) {
 
-	DiamondTrap	basicRobot("Marvin"), advancedRobot("DeepThought");
+	DiamondTrap	simpleAndroid("Marvin"), superComputer("DeepThought");
 
 	std::cout << std::endl;
 
-	basicRobot.whoAmI();
-	basicRobot.attack("Astrostoper");
-	basicRobot.attack("Astrostoper");
-	basicRobot.takeDamage(42);
-	basicRobot.beRepaired(10);
-	basicRobot.guardGate();
-	basicRobot.highFivesGuys();
+	simpleAndroid.whoAmI();
+	simpleAndroid.attack("Astrostoper");
+	simpleAndroid.attack("Astrostoper");
+	simpleAndroid.takeDamage(42);
+	simpleAndroid.beRepaired(10);
+	simpleAndroid.guardGate();
+	simpleAndroid.highFivesGuys();
 
 	std::cout << std::endl;
 
-	advancedRobot.whoAmI();
-	advancedRobot.attack("Galaxy Vice-President");
-	advancedRobot.takeDamage(142);
-	advancedRobot.attack("Galaxy Vice-President");
-	advancedRobot.beRepaired(10);
-	advancedRobot.guardGate();
-	advancedRobot.highFivesGuys();
-	advancedRobot.whoAmI();
+	superComputer.whoAmI();
+	superComputer.attack("Galaxy Vice-President");
+	superComputer.takeDamage(142);
+	superComputer.attack("Galaxy Vice-President");
+	superComputer.beRepaired(10);
+	superComputer.guardGate();
+	superComputer.highFivesGuys();
+	superComputer.whoAmI();
 
 	std::cout << std::endl;
 
-	DiamondTrap	basicRobotCopy(basicRobot);
+	DiamondTrap	simpleAndroidCopy(simpleAndroid);
 
 	std::cout << std::endl;
 
-	basicRobotCopy.whoAmI();
-	basicRobotCopy.beRepaired(20);
-	basicRobotCopy.guardGate();
-	basicRobotCopy.highFivesGuys();
+	simpleAndroidCopy.whoAmI();
+	simpleAndroidCopy.beRepaired(20);
+	simpleAndroidCopy.guardGate();
+	simpleAndroidCopy.highFivesGuys();
 
 	std::cout << std::endl;
 
-	basicRobotCopy = basicRobot;
+	simpleAndroidCopy = simpleAndroid;
 
 	std::cout << std::endl;
 
-	basicRobotCopy.whoAmI();
-	basicRobotCopy.attack("Emperor of Universe");
-	basicRobotCopy.takeDamage(42);
-	basicRobotCopy.guardGate();
-	basicRobotCopy.highFivesGuys();
+	simpleAndroidCopy.whoAmI();
+	simpleAndroidCopy.attack("Emperor of Universe");
+	simpleAndroidCopy.takeDamage(42);
+	simpleAndroidCopy.guardGate();
+	simpleAndroidCopy.highFivesGuys();
 
 	std::cout << std::endl;
 
