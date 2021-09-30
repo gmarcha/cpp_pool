@@ -20,5 +20,22 @@ int main(void) {
 
 	std::cout << std::endl;
 
+	a = b;
+
+	std::cout << std::endl;
+
+	a.attack("Skag");
+	a.takeDamage(10);
+
+	std::cout << std::endl;
+
+	ClapTrap	c(a);
+
+	std::cout << std::endl;
+
+	c.beRepaired(10);
+
+	std::cout << std::endl;
+
 	return (0);
 }
