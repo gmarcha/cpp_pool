@@ -21,5 +21,24 @@ int main(void) {
 
 	std::cout << std::endl;
 
+	ScavTrap	littleRobotCopy(littleRobot);
+
+	std::cout << std::endl;
+
+	littleRobotCopy.beRepaired(20);
+	littleRobotCopy.guardGate();
+
+	std::cout << std::endl;
+
+	littleRobotCopy = littleRobot;
+
+	std::cout << std::endl;
+
+	littleRobotCopy.attack("Skag (the only one)");
+	littleRobotCopy.takeDamage(42);
+	littleRobotCopy.guardGate();
+
+	std::cout << std::endl;
+
 	return (0);
 }
