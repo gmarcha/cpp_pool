@@ -1,22 +1,23 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void) {
 
-	ClapTrap	a("CL4P-TP");
-	ClapTrap	b("CAPS-TP");
+	ScavTrap	littleRobot("R2D2"), humanRobot("C3P0");
 
 	std::cout << std::endl;
 
-	a.attack("Skag");
-	a.attack("Skag");
-	a.takeDamage(42);
-	a.beRepaired(10);
+	littleRobot.attack("Skag");
+	littleRobot.attack("Skag");
+	littleRobot.takeDamage(42);
+	littleRobot.beRepaired(10);
+	littleRobot.guardGate();
 
 	std::cout << std::endl;
 
-	b.attack("Skag (again)");
-	b.takeDamage(9);
-	b.beRepaired(10);
+	humanRobot.attack("Skag (again)");
+	humanRobot.takeDamage(142);
+	humanRobot.attack("Skag (again)");
+	humanRobot.beRepaired(10);
 
 	std::cout << std::endl;
 
