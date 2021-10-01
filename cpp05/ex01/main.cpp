@@ -43,6 +43,7 @@ int main(void) {
         boss.signForm(contract);
         std::cout << contract << std::endl;
     }
+
     std::cout << std::endl;
     
     {
