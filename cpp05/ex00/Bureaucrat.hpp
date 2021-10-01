@@ -17,23 +17,19 @@ class Bureaucrat {
         Bureaucrat&	operator=(const Bureaucrat &rhs);
 
         // Member functions
-        const std::string getName(void) const;
+        const std::string& getName(void) const;
         size_t getGrade(void) const;
         void upGrade(void);
         void downGrade(void);
 
         class GradeTooHighException : public std::exception {
             public:
-                virtual const char* what() const throw() {
-                    return "Bureaucrat grade is too high";
-                }
+                virtual const char* what() const throw();
         };
 
         class GradeTooLowException : public std::exception {
             public:
-                virtual const char* what() const throw() {
-                    return "Bureaucrat grade is too low";
-                }
+                virtual const char* what() const throw();
         };
 
     private:
