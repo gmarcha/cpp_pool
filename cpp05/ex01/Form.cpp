@@ -77,7 +77,7 @@ const char* Form::GradeTooLowException::what() const throw() {
 
 std::ostream&   operator<<(std::ostream& os, const Form &rhs) {
     os << rhs.getName() << " is " << (!rhs.getSignedStatus() ? "not " : "") << "signed. ";
-    os << "The grade to sign is set to " << rhs.getGradeToSign() << " and ";
-    os << "the grade to execute is set to " << rhs.getGradeToExecute() << ".";
+    os << "For signing, grade must be at maximum " << rhs.getGradeToSign() << " and ";
+    os << "for execution, grade must be at maximum " << rhs.getGradeToExecute() << ".";
     return os;
 }
