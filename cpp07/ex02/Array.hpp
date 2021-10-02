@@ -10,7 +10,7 @@ class Array {
 
         // Constructors and destructor
         Array(void) :
-            _array(new T()), _size(0) {}
+            _array(new T[0]()), _size(0) {}
         Array(const unsigned int n) :
             _array(new T[n]()), _size(n) {}
         Array(const Array &src) :

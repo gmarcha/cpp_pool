@@ -3,6 +3,17 @@
 
 int main(void) {
 
+    Array<int>  emptyArray;
+
+    std::cout << "size: " << emptyArray.size() << std::endl;
+    try {
+        std::cout << emptyArray[0] << std::endl;
+    } catch(std::exception &e) {
+        std::cout << "operation failed: " << e.what() << std::endl;
+    }
+
+    std::cout << std::endl;
+
     Array<int>   intArray(10);
 
     std::cout << "size: " << intArray.size() << std::endl;
