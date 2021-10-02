@@ -74,6 +74,13 @@ Converter::Flags::Flags(const Flags &src) :
     floatImpossible(src.floatImpossible),
     doubleImpossible(src.doubleImpossible) {}
 
+void    Converter::Flags::setFlags(const bool value) {
+    charImpossible = value;
+    intImpossible = value;
+    floatImpossible = value;
+    doubleImpossible = value;
+}
+
 void    Converter::parseInputString(void) {
 
     if (_inputString[0] == '\0') {
@@ -116,10 +123,7 @@ void    Converter::parseInputString(void) {
 
     if (isdigit(_inputString[0]) == 0 && _inputString[0] != '-' && _inputString[0] != '.') {
         if (_inputString[1] != '\0') {
-            _inputFlags->charImpossible = true;
-            _inputFlags->intImpossible = true;
-            _inputFlags->floatImpossible = true;
-            _inputFlags->doubleImpossible = true;
+            _inputFlags->setFlags(true);
             return ;
         }
         _charValue = _inputString[0];
@@ -136,50 +140,34 @@ void    Converter::parseInputString(void) {
         isInputAnInt = true;
         i++;
     }
-
     if (_inputString[i] == '.') {
         isInputAnInt = false;
         i++;
     }
-
     while (isdigit(_inputString[i]) != 0) {
         _precision++;
         i++;
     }
-
     if (_inputString[i] == 'f') {
         if (isInputAnInt == true) {
-            _inputFlags->charImpossible = true;
-            _inputFlags->intImpossible = true;
-            _inputFlags->floatImpossible = true;
-            _inputFlags->doubleImpossible = true;
+            _inputFlags->setFlags(true);
             return ;
         }
         if (i < 2) {
-            _inputFlags->charImpossible = true;
-            _inputFlags->intImpossible = true;
-            _inputFlags->floatImpossible = true;
-            _inputFlags->doubleImpossible = true;
+            _inputFlags->setFlags(true);
             return ;
         }
         i++;
     }
-
     if (_inputString[i] != '\0') {
-        _inputFlags->charImpossible = true;
-        _inputFlags->intImpossible = true;
-        _inputFlags->floatImpossible = true;
-        _inputFlags->doubleImpossible = true;
+        _inputFlags->setFlags(true);
         return ;
     }
 
     const double inputValue = std::strtod(_inputString.c_str(), NULL);
 
     if (isinf(inputValue) != false && errno == ERANGE) {
-        _inputFlags->charImpossible = true;
-        _inputFlags->intImpossible = true;
-        _inputFlags->floatImpossible = true;
-        _inputFlags->doubleImpossible = true;
+        _inputFlags->setFlags(true);
         return ;
     }
 
@@ -189,18 +177,15 @@ void    Converter::parseInputString(void) {
     ) {
         _inputFlags->charImpossible = true;
     }
-
     if (
         inputValue < std::numeric_limits<int>::min() ||
         inputValue > std::numeric_limits<int>::max()
     ) {
         _inputFlags->intImpossible = true;
     }
-
     if (
-        inputValue != 0 &&
-        (inputValue < std::numeric_limits<float>::min() ||
-        inputValue > std::numeric_limits<float>::max())
+        inputValue < -std::numeric_limits<float>::max() ||
+        inputValue > std::numeric_limits<float>::max()
     ) {
         _inputFlags->floatImpossible = true;
     }
@@ -268,18 +253,4 @@ void    Converter::printDouble(void) const {
     }
     const size_t precisionToUse = _precision != 0 ? _precision : 1;
     std::cout << std::setprecision(precisionToUse) << _doubleValue << std::endl;
-}
-
-void    Converter::printStatus(void) const {
-
-    std::cout << "_inputString: " << _inputString << std::endl;
-    std::cout << "_inputFlags->charImpossible: " << _inputFlags->charImpossible << std::endl;
-    std::cout << "_inputFlags->intImpossible: " << _inputFlags->intImpossible << std::endl;
-    std::cout << "_inputFlags->floatImpossible: " << _inputFlags->floatImpossible << std::endl;
-    std::cout << "_inputFlags->doubleImpossible: " << _inputFlags->doubleImpossible << std::endl;
-    std::cout << "_precision: " << _precision << std::endl;
-    std::cout << "_charValue: " << _charValue << std::endl;
-    std::cout << "_intValue: " <<_intValue << std::endl;
-    std::cout << "_floatValue: " << _floatValue << std::endl;
-    std::cout << "_doubleValue: " << _doubleValue << std::endl;
 }

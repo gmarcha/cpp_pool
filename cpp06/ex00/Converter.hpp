@@ -29,7 +29,6 @@ class Converter {
         void    printInt() const;
         void    printFloat() const;
         void    printDouble() const;
-        void    printStatus() const;
 
         // Attributes
 
@@ -39,6 +38,8 @@ class Converter {
 
                 Flags();
                 Flags(const Flags &src);
+
+                void setFlags(const bool value);
 
                 bool    charImpossible;
                 bool    intImpossible;
