@@ -2,10 +2,12 @@ NAME		=	ex02.out
 CC			=	clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic -pedantic-errors
 HEAD		=	ClapTrap.hpp \
+				ScavTrap.hpp \
 				FragTrap.hpp
 OBJ			=	$(SRC:.cpp=.o)
 SRC			=	main.cpp \
 				ClapTrap.cpp \
+				ScavTrap.cpp \
 				FragTrap.cpp
 
 all:			$(NAME)
