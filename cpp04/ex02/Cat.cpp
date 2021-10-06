@@ -12,13 +12,17 @@ Cat::Cat(const Cat &src) : Animal(src), _brain(NULL) {
 }
 
 Cat::~Cat() {
-    delete _brain;
+    if (_brain != NULL) {
+        delete _brain;
+    }
     std::cout << "Cat destructor called" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat &rhs) {
     Animal::operator=(rhs);
-    delete _brain;
+    if (_brain != NULL) {
+        delete _brain;
+    }
     _brain = new Brain(*rhs._brain);
     std::cout << "Cat assignement operator called" << std::endl;
     return *this;
