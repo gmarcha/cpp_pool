@@ -9,7 +9,7 @@ DiamondTrap::DiamondTrap(void) :
 }
 
 DiamondTrap::DiamondTrap(const std::string &name) :
-    ClapTrap(name + "_clap_name", 100, 50, 30),
+    ClapTrap(name + "_clap_name"),
     ScavTrap(name),
     FragTrap(name),
     _name(name) {

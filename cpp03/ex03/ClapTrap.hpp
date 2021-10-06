@@ -8,12 +8,7 @@ class ClapTrap {
 
 	public:
 	
-		ClapTrap(
-			const std::string &name,
-			const size_t hitPoints = 10,
-			const size_t energyPoints = 10,
-			const size_t attackDamage = 0
-		);
+		ClapTrap(const std::string &name);
 		ClapTrap(const ClapTrap &src);
 		virtual ~ClapTrap();
 

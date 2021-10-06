@@ -2,22 +2,17 @@
 
 ClapTrap::ClapTrap(void) :
 	_name("default"),
-	_hitPoints(10),
-	_energyPoints(10),
-	_attackDamage(0) {
+	_hitPoints(100),
+	_energyPoints(50),
+	_attackDamage(30) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(
-	const std::string &name,
-	const size_t hitPoints,
-	const size_t energyPoints,
-	const size_t attackDamage
-) :
+ClapTrap::ClapTrap(const std::string &name) :
 	_name(name),
-	_hitPoints(hitPoints),
-	_energyPoints(energyPoints),
-	_attackDamage(attackDamage) {
+	_hitPoints(100),
+	_energyPoints(50),
+	_attackDamage(30) {
 	std::cout << "ClapTrap initialization constructor called" << std::endl;
 }
 
