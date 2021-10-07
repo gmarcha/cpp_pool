@@ -1,9 +1,20 @@
 NAME		=	ex03.out
 CC			=	clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic -pedantic-errors
-HEAD		=	.hpp
+HEAD		=	AMateria.hpp \
+				Ice.hpp \
+				Cure.hpp \
+				ICharacter.hpp \
+				Character.hpp \
+				IMateriaSource.hpp \
+				MateriaSource.hpp
 OBJ			=	$(SRC:.cpp=.o)
-SRC			=	main.cpp
+SRC			=	main.cpp \
+				AMateria.cpp \
+				Ice.cpp \
+				Cure.cpp \
+				Character.cpp \
+				MateriaSource.cpp
 
 all:			$(NAME)
 
