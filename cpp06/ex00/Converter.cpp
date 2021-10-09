@@ -36,14 +36,13 @@ Converter::Converter(const std::string &inputString) :
 Converter::Converter(const Converter &src) :
     _inputString(src._inputString),
     _inputFlags(NULL),
-    _precision(0),
+    _precision(src._precision),
     _charValue(src._charValue),
     _intValue(src._intValue),
     _floatValue(src._floatValue),
     _doubleValue(src._doubleValue) {
 
     _inputFlags = new Flags(*src._inputFlags);
-    parseInputString();
 }
 
 Converter::~Converter() {
@@ -58,7 +57,6 @@ Converter&  Converter::operator=(const Converter &rhs) {
     _intValue = rhs._intValue;
     _floatValue = rhs._floatValue;
     _doubleValue = rhs._doubleValue;
-    parseInputString();
     return *this;
 }
 
