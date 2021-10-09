@@ -51,17 +51,17 @@ void    identify_from_reference(Base& p) {
     char classType = 0;
 
     try {
-        (void)dynamic_cast<A&>(p);
+        static_cast<void>(dynamic_cast<A&>(p));
         classType = 'A';
     } catch(std::exception &e) {}
     
     try {
-        (void)dynamic_cast<B&>(p);
+        static_cast<void>(dynamic_cast<B&>(p));
         classType = 'B';
     } catch(std::exception &e) {}
 
     try {
-        (void)dynamic_cast<C&>(p);
+        static_cast<void>(dynamic_cast<C&>(p));
         classType = 'C';
     } catch(std::exception &e) {}
 
