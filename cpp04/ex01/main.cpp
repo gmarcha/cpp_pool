@@ -26,8 +26,12 @@ int main(void) {
 
     std::cout << std::endl;
 
-    Dog*    dog = new Dog();
-    Dog*    test = new Dog(*dog);
+    Animal*       dog = new Dog();
+    Animal*       test = new Dog(*dog);
+
+    std::cout << std::endl;
+
+    *dog = *test;
 
     std::cout << std::endl;
 
